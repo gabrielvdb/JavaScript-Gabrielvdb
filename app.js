@@ -1,29 +1,22 @@
-function limpiar () {
-    document.getElementById ("calculadora").reset();
-}
-
-function sumar(){
-var x =parseInt(document.getElementById("valor1").value);
-var y =parseInt(document.getElementById("valor2").value);
-alert(x+y);
-
-}
-function restar(){
-    var x =parseInt(document.getElementById("valor1").value);
-    var y =parseInt(document.getElementById("valor2").value);
-    alert(x-y);
-    
+function capturar(){
+    function Persona(nombre, edad){
+        this.nombre=nombre;
+        this.edad=edad;
     }
-     function multiplicar(){
-        var x =parseInt(document.getElementById("valor1").value);
-        var y =parseInt(document.getElementById("valor2").value);
-        alert(x*y);
-        
-        }
-        
-            function dividir(){
-            var x =parseInt(document.getElementById("valor1").value);
-            var y =parseInt(document.getElementById("valor2").value);
-            alert(x/y);
-            
-            }
+    let nombreCapturar= document.getElementById("nombre").value;
+   
+    let edadCapturar= document.getElementById("edad").value;
+
+
+    nuevoSujeto= new Persona(nombreCapturar,edadCapturar);
+    console.log(nuevoSujeto);
+
+    agregar();
+}
+let baseDatos=[];
+function agregar() {
+baseDatos.push(nuevoSujeto);
+console.log(baseDatos);
+document.getElementById("tabla").innerHTML+= '<tbody><td>'+nuevoSujeto.nombre+'</td><td>'+nuevoSujeto.edad+'</td></tbody>';
+    
+};
